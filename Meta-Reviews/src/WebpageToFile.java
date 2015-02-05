@@ -1,0 +1,48 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class WebpageToFile {
+	
+	URL url;
+	
+	public WebpageToFile (String searchTerm) {
+		try {
+			url = new URL("https://www.google.co.uk/search?q=" + searchTerm + "+review");
+		} catch (MalformedURLException e) {
+			System.out.println("URL is malformed");
+			e.printStackTrace();
+		}
+	}
+	
+	public void fileCreate() throws Exception {
+		OutputStream out = new FileOutputStream("C:\\Users\\Marcus\\Documents\\GitHub\\Individual-Project\\Meta-Reviews\\src\\googleURLs.html");
+
+        URL url = new URL("https://www.google.co.uk/search?q=the+matrix+reloaded+review");
+        URLConnection conn = url.openConnection();
+        conn.setRequestProperty(
+				"User-Agent",
+                "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36");
+        conn.connect();
+        InputStream is = conn.getInputStream();
+
+        copy(is, out);
+        is.close();
+        out.close();
+	}
+
+    private static void copy(InputStream from, OutputStream to) throws IOException {
+        byte[] buffer = new byte[4096];
+        while (true) {
+            int numBytes = from.read(buffer);
+            if (numBytes == -1) {
+                break;
+            }
+            to.write(buffer, 0, numBytes);
+        }
+    }
+}
