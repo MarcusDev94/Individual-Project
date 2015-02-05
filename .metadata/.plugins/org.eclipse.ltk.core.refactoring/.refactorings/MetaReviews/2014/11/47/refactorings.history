@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;peopleAndPlaces&apos; in &apos;XLMdata.init2()&apos; to &apos;reviewScores&apos;&#x0D;&#x0A;- Original project: &apos;MetaReviews&apos;&#x0D;&#x0A;- Original element: &apos;XLMdata.init2().peopleAndPlaces&apos;&#x0D;&#x0A;- Renamed element: &apos;peopleAndPlaces&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;peopleAndPlaces&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{XLMdata.java[XLMdata~init2@peopleAndPlaces!2610!2719!2626!2640!QSet\&lt;QAnnotation;&gt;;!0!false" name="reviewScores" references="true" stamp="1416507024306" version="1.0"/>
+</session>
